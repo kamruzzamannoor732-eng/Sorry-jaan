@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sorry My Love ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Playfair Display', 'Noto Sans Bengali', serif;
+            background: #0a0e27;
+            color: white;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #0a0e27, #1a1a3e, #2d1b4e, #0a0e27);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: 0;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        .section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(30px) scale(0.95);
+            z-index: 10;
+        }
+
+        .section.active {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0) scale(1);
+        }
+
+        .section.prev {
+            opacity: 0;
+            transform: translateY(-100%) scale(0.9);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Great Vibes', cursive;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 15px rgba(255, 182, 193, 0.5);
+            line-height: 1.3;
+        }
+
+        h1 { font-size: 3rem; color: #ffd1dc; letter-spacing: 2px; }
+        h2 { font-size: 2.4rem; color: #ffb6c1; letter-spacing: 1px; }
+        h3 { font-size: 1.8rem; color: #ffc0cb; }
+
+        p {
+            text-align: center;
+            font-size: 1.15rem;
+            line-height: 2;
+            color: #f0e6e6;
+            max-width: 340px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', 'Noto Sans Bengali', serif;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .highlight-text {
+            font-size: 1.3rem;
+            color: #ffd1dc;
+            font-weight: 700;
+            line-height: 2.2;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            border: none;
+            padding: 16px 45px;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.2rem;
+            font-family: 'Great Vibes', cursive;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1px;
+        }
+
+        .btn:active {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+        }
+
+        .btn-purple {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #feca57 0%, #ff9f43 100%);
+            box-shadow: 0 10px 30px rgba(254, 202, 87, 0.4);
+            color: #2d1b4e;
+        }
+
+        /* ========== SORRY LETTER ========== */
+        .sorry-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 25px;
+            padding: 30px 25px;
+            max-width: 360px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .sorry-emoji {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            animation: sadBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes sadBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .sorry-text {
+            font-size: 1.2rem;
+            line-height: 2.2;
+            color: #ffe4e1;
+            font-family: 'Noto Sans Bengali', 'Playfair Display', sans-serif;
+        }
+
+        /* ========== CUTE TEDDY BEAT SECTION ========== */
+        .teddy-scene {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .teddy-wrapper {
+            position: relative;
+            width: 250px;
+            height: 300px;
+            margin: 20px auto;
+            cursor: pointer;
+        }
+
+        /* Cute Teddy CSS */
+        .cute-teddy {
+            width: 160px;
+            height: 190px;
+            background: linear-gradient(180deg, #d4a373 0%, #c49363 100%);
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3), inset 0 -5px 15px rgba(0,0,0,0.1);
+            transition: all 0.15s ease;
+        }
+
+        /* Ears */
+        .cute-teddy::before, .cute-teddy::after {
+            content: '';
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(180deg, #d4a373 0%, #c49363 100%);
+            border-radius: 50%;
+            top: -15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .cute-teddy::before { left: 15px; }
+        .cute-teddy::after { right: 15px; }
+
+        /* Inner ears */
+        .teddy-ear-inner {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: #faedcd;
+            border-radius: 50%;
+            top: -5px;
+            z-index: 2;
+        }
+
+        .teddy-ear-inner.left { left: 25px; }
+        .teddy-ear-inner.right { right: 25px; }
+
+        /* Face area */
+        .teddy-face {
+            position: absolute;
+            width: 70px;
+            height: 55px;
+            background: #faedcd;
+            border-radius: 50%;
+            left: 50%;
+            top: 38%;
+            transform: translateX(-50%);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Eyes - cute round */
+        .teddy-eye {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #2d1b1b;
+            border-radius: 50%;
+            top: 16px;
+            transition: all 0.15s;
+        }
+
+        .teddy-eye.left { left: 16px; }
+        .teddy-eye.right { right: 16px; }
+
+        /* Eye shine */
+        .teddy-eye::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            right: 2px;
+        }
+
+        /* Beat mode - eyes become > < */
+        .cute-teddy.beating .teddy-eye {
+            width: 14px;
+            height: 3px;
+            border-radius: 2px;
+            top: 20px;
+            background: #2d1b1b;
+        }
+
+        .cute-teddy.beating .teddy-eye::after {
+            display: none;
+        }
+
+        .cute-teddy.beating .teddy-eye.left {
+            transform: rotate(20deg);
+        }
+
+        .cute-teddy.beating .teddy-eye.right {
+            transform: rotate(-20deg);
+        }
+
+        /* Nose */
+        .teddy-nose {
+            position: absolute;
+            width: 14px;
+            height: 10px;
+            background: #5a3a3a;
+            border-radius: 50%;
+            left: 50%;
+            top: 28px;
+            transform: translateX(-50%);
+        }
+
+        /* Mouth - cute smile */
+        .teddy-mouth {
+            position: absolute;
+            width: 24px;
+            height: 12px;
+            border: 2.5px solid #5a3a3a;
+            border-top: none;
+            border-radius: 0 0 24px 24px;
+            left: 50%;
+            top: 34px;
+            transform: translateX(-50%);
+            transition: all 0.15s;
+        }
+
+        /* Beat mode - sad mouth */
+        .cute-teddy.beating .teddy-mouth {
+            border-radius: 24px 24px 0 0;
+            border-top: 2.5px solid #5a3a3a;
+            border-bottom: none;
+            top: 36px;
+        }
+
+        /* Cheeks - rosy */
+        .teddy-cheek {
+            position: absolute;
+            width: 18px;
+            height: 12px;
+            background: #ffb5a7;
+            border-radius: 50%;
+            top: 22px;
+            opacity: 0.7;
+        }
+
+        .teddy-cheek.left { left: -8px; }
+        .teddy-cheek.right { right: -8px; }
+
+        /* Arms */
+        .teddy-arm {
+            position: absolute;
+            width: 38px;
+            height: 60px;
+            background: linear-gradient(180deg, #d4a373 0%, #c49363 100%);
+            border-radius: 50%;
+            bottom: 30px;
+            transition: all 0.15s;
+        }
+
+        .teddy-arm.left { left: -15px; transform: rotate(-25deg); }
+        .teddy-arm.right { right: -15px; transform: rotate(25deg); }
+
+        /* Beat mode - arms up in defense */
+        .cute-teddy.beating .teddy-arm.left {
+            transform: rotate(-70deg) translateY(-25px);
+        }
+
+        .cute-teddy.beating .teddy-arm.right {
+            transform: rotate(70deg) translateY(-25px);
+        }
+
+        /* Legs */
+        .teddy-leg {
+            position: absolute;
+            width: 32px;
+            height: 42px;
+            background: linear-gradient(180deg, #d4a373 0%, #c49363 100%);
+            border-radius: 50%;
+            bottom: -15px;
+            transition: all 0.15s;
+        }
+
+        .teddy-leg.left { left: 30px; }
+        .teddy-leg.right { right: 30px; }
+
+        /* Beat mode - legs shake */
+        .cute-teddy.beating .teddy-leg.left {
+            transform: rotate(-20deg);
+        }
+
+        .cute-teddy.beating .teddy-leg.right {
+            transform: rotate(20deg);
+        }
+
+        /* Belly patch */
+        .teddy-belly {
+            position: absolute;
+            width: 50px;
+            height: 40px;
+            background: #faedcd;
+            border-radius: 50%;
+            left: 50%;
+            bottom: 25px;
+            transform: translateX(-50%);
+            opacity: 0.4;
+        }
+
+        /* Beat Animation */
+        @keyframes teddyShake {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+            10% { transform: translate(-53%, -53%) rotate(-8deg) scale(0.95); }
+            20% { transform: translate(-47%, -47%) rotate(8deg) scale(0.95); }
+            30% { transform: translate(-53%, -50%) rotate(-5deg) scale(0.97); }
+            40% { transform: translate(-47%, -50%) rotate(5deg) scale(0.97); }
+            50% { transform: translate(-50%, -53%) rotate(0deg) scale(0.95); }
+            60% { transform: translate(-50%, -47%) rotate(-3deg) scale(0.98); }
+            70% { transform: translate(-52%, -50%) rotate(3deg) scale(0.98); }
+            80% { transform: translate(-48%, -51%) rotate(-1deg) scale(0.99); }
+            90% { transform: translate(-51%, -49%) rotate(1deg) scale(0.99); }
+        }
+
+        .cute-teddy.beating {
+            animation: teddyShake 0.5s ease-in-out;
+        }
+
+        /* Impact effects */
+        .impact-effect {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .impact-effect.show {
+            animation: impactPop 0.5s ease-out forwards;
+        }
+
+        @keyframes impactPop {
+            0% { opacity: 1; transform: scale(0.3) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.4) rotate(10deg); }
+            100% { opacity: 0; transform: scale(1.8) rotate(-10deg) translateY(-40px); }
+        }
+
+        /* Speech bubble */
+        .speech-bubble {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            color: #333;
+            padding: 10px 18px;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            font-family: 'Noto Sans Bengali', sans-serif;
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 20;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px 10px 0;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+
+        .speech-bubble.show {
+            opacity: 1;
+        }
+
+        /* Hit counter */
+        .hit-counter {
+            position: absolute;
+            top: -30px;
+            right: 20px;
+            background: rgba(255, 107, 157, 0.9);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Teddy label */
+        .teddy-label {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 12px 20px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #ffd1dc;
+            text-align: center;
+            max-width: 300px;
+        }
+
+        /* ========== GIFT BOX ========== */
+        .gift-container {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 25px auto;
+            cursor: pointer;
+        }
+
+        .gift-box {
+            width: 110px;
+            height: 110px;
+            background: linear-gradient(135deg, #feca57 0%, #ff9f43 100%);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(254, 202, 87, 0.4);
+            transition: all 0.5s;
+        }
+
+        .gift-lid {
+            width: 120px;
+            height: 28px;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 12px;
+            transition: all 0.5s;
+            z-index: 2;
+        }
+
+        .gift-ribbon {
+            position: absolute;
+            width: 22px;
+            height: 110px;
+            background: #ff6b9d;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+        }
+
+        .gift-bow {
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.2rem;
+        }
+
+        .gift-container.opened .gift-lid {
+            transform: translateX(-50%) translateY(-100px) rotate(-25deg);
+            opacity: 0;
+        }
+
+        .gift-container.opened .gift-box {
+            transform: translateX(-50%) scale(0.8);
+            opacity: 0;
+        }
+
+        /* ========== LOVE EXPLOSION ========== */
+        .love-explosion {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+        }
+
+        .love-explosion.active {
+            display: block;
+        }
+
+        .love-text {
+            position: absolute;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff6b9d;
+            text-shadow: 0 0 10px rgba(255, 107, 157, 0.8);
+            animation: loveFly 3s ease-out forwards;
+            white-space: nowrap;
+        }
+
+        @keyframes loveFly {
+            0% { opacity: 0; transform: scale(0) rotate(0deg); }
+            10% { opacity: 1; transform: scale(1.2) rotate(var(--rot)); }
+            90% { opacity: 1; }
+            100% { opacity: 0; transform: scale(0.5) rotate(calc(var(--rot) * 2)) translate(var(--tx), var(--ty)); }
+        }
+
+        /* ========== COMMON ========== */
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: floatHeart 4s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+
+        .moon {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            font-size: 2.5rem;
+            animation: moonGlow 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px #fbbf24);
+        }
+
+        @keyframes moonGlow {
+            0%, 100% { filter: drop-shadow(0 0 10px #fbbf24); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 25px #fbbf24); transform: scale(1.1); }
+        }
+
+        .progress {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: #ff6b9d;
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        .swipe-hint {
+            position: fixed;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            animation: pulse 2s infinite;
+            z-index: 100;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .music-control {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+        }
+
+        .music-control:active {
+            transform: scale(1.1);
+        }
+
+        .music-control.playing {
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            animation: particleFloat 3s ease-out forwards;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+        }
+
+        @media (max-width: 400px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            h3 { font-size: 1.6rem; }
+            p { font-size: 1.05rem; max-width: 300px; }
+            .highlight-text { font-size: 1.15rem; }
+            .teddy-wrapper { width: 220px; height: 270px; }
+            .cute-teddy { width: 140px; height: 170px; }
+            .teddy-face { width: 60px; height: 48px; }
+            .teddy-label { font-size: 0.9rem; padding: 10px 15px; }
+            .sorry-text { font-size: 1.05rem; }
+        }
+
+        ::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body>
+    <!-- Audio -->
+    <audio id="bgMusic" loop>
+        <source src="dil_diyan_gallan.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="music-control" id="musicBtn" onclick="toggleMusic()">🎵</div>
+    <div class="bg-gradient"></div>
+    <div class="stars" id="stars"></div>
+    <div class="moon">🌙</div>
+
+    <!-- Love Explosion Overlay -->
+    <div class="love-explosion" id="loveExplosion"></div>
+
+    <!-- ========== SECTION 1: SORRY LETTER ========== -->
+    <div class="section active" id="section1">
+        <div class="sorry-card">
+            <div class="sorry-emoji">😔💔</div>
+            <h2>I'm Sorry My Love</h2>
+            <p class="sorry-text">
+                I am sorry 😔<br>
+                Plzz amk maf kore dao..<br>
+                Next time theke emon ar hobe na...<br>
+                Amr lokkhi plzz amk maf kore dao...<br>
+                Jaan sorryy.. 💕
+            </p>
+            <button class="btn" onclick="nextSection()">Please forgive me... 🥺</button>
+        </div>
+    </div>
+
+    <!-- ========== SECTION 2: BEAT THE TEDDY ========== -->
+    <div class="section" id="section2">
+        <h2>Still Angry?</h2>
+
+        <div class="teddy-label">
+            If you are angry with your husband,<br>
+            you should catch him and beat him! 😤
+        </div>
+
+        <div class="teddy-scene">
+            <div class="teddy-wrapper" id="teddyWrapper" onclick="beatTeddy(event)">
+                <div class="hit-counter" id="hitCounter">Hits: 0</div>
+                <div class="speech-bubble" id="speechBubble">Auch! 😣</div>
+
+                <div class="impact-effect" id="impact1" style="top: 10px; left: -40px;">💥</div>
+                <div class="impact-effect" id="impact2" style="top: 50px; right: -40px;">👊</div>
+                <div class="impact-effect" id="impact3" style="bottom: 30px; left: -30px;">😵</div>
+                <div class="impact-effect" id="impact4" style="top: 80px; left: -50px;">🤕</div>
+                <div class="impact-effect" id="impact5" style="bottom: 60px; right: -40px;">💢</div>
+
+                <div class="cute-teddy" id="cuteTeddy">
+                    <div class="teddy-ear-inner left"></div>
+                    <div class="teddy-ear-inner right"></div>
+                    <div class="teddy-face">
+                        <div class="teddy-eye left"></div>
+                        <div class="teddy-eye right"></div>
+                        <div class="teddy-nose"></div>
+                        <div class="teddy-mouth"></div>
+                        <div class="teddy-cheek left"></div>
+                        <div class="teddy-cheek right"></div>
+                    </div>
+                    <div class="teddy-belly"></div>
+                    <div class="teddy-arm left"></div>
+                    <div class="teddy-arm right"></div>
+                    <div class="teddy-leg left"></div>
+                    <div class="teddy-leg right"></div>
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size: 1rem; color: #aaa; margin: 10px 0;">👆 Tap the teddy to beat him! (Unlimited)</p>
+
+        <button class="btn btn-purple" onclick="nextSection()">
+            Enough? Let's make up! 💕
+        </button>
+    </div>
+
+    <!-- ========== SECTION 3: GIFT BOX ========== -->
+    <div class="section" id="section3">
+        <h2>I have something for you...</h2>
+        <div style="font-size: 2rem; margin: 10px 0;">🎁💝</div>
+        <div class="gift-container" id="giftBox" onclick="openGift()">
+            <div class="gift-lid">
+                <div class="gift-bow">🎀</div>
+            </div>
+            <div class="gift-box">
+                <div class="gift-ribbon"></div>
+            </div>
+        </div>
+        <p id="giftText">Click to open! 🎁✨</p>
+    </div>
+
+    <!-- ========== SECTION 4: FINAL ========== -->
+    <div class="section" id="section4">
+        <div style="font-size: 5rem; margin-bottom: 20px;">🥰💕</div>
+        <h1>I Love You Forever</h1>
+        <p class="highlight-text">
+            You are my everything...<br>
+            My today and all my tomorrows...<br>
+            Please never be angry with me again! 🥺💕
+        </p>
+        <button class="btn btn-gold" onclick="createLoveExplosion()" style="margin-top: 20px;">
+            I Love You! ❤️
+        </button>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress" id="progress"></div>
+    <div class="swipe-hint" id="swipeHint">Tap to continue 👆</div>
+
+    <script>
+        let currentSection = 1;
+        const totalSections = 4;
+        let musicPlaying = false;
+        let giftOpened = false;
+        let hitCount = 0;
+
+        const ouchMessages = [
+            "Auch! 😣", "Oww! 😫", "Sorry jaan! 🥺", "Plzz maaf! 😔",
+            "Aita koto! 😵", "Bachao! 😱", "Ami bhul bujhechi! 😢",
+            "Next time hobe na! 🤞", "Tumi amar lokkhi! 💕", "I love you! ❤️",
+            "Bas bas! 😅", "Maaf kore dao! 🙏", "Tumi best! 💖",
+            "Ami tomar! 💕", "Please please! 🥺"
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createStars();
+            createProgressDots();
+            updateProgress();
+
+            const music = document.getElementById('bgMusic');
+            music.volume = 0.5;
+
+            document.body.addEventListener('click', () => {
+                if (!musicPlaying) toggleMusic();
+            }, { once: true });
+        });
+
+        function createStars() {
+            const container = document.getElementById('stars');
+            for (let i = 0; i < 120; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.width = Math.random() * 3 + 1 + 'px';
+                star.style.height = star.style.width;
+                container.appendChild(star);
+            }
+        }
+
+        function createProgressDots() {
+            const progress = document.getElementById('progress');
+            for (let i = 1; i <= totalSections; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                dot.id = 'dot' + i;
+                progress.appendChild(dot);
+            }
+        }
+
+        function updateProgress() {
+            for (let i = 1; i <= totalSections; i++) {
+                const dot = document.getElementById('dot' + i);
+                dot.classList.toggle('active', i === currentSection);
+            }
+
+            const hint = document.getElementById('swipeHint');
+            if (currentSection === 1) hint.textContent = 'Tap to continue 👆';
+            else if (currentSection === 2) hint.textContent = 'Beat the teddy! 👊';
+            else if (currentSection === 3) hint.textContent = 'Click the gift! 🎁';
+            else hint.style.display = 'none';
+        }
+
+        function nextSection() {
+            if (currentSection < totalSections) {
+                const current = document.getElementById('section' + currentSection);
+                const next = document.getElementById('section' + (currentSection + 1));
+
+                current.classList.remove('active');
+                current.classList.add('prev');
+                setTimeout(() => current.classList.remove('prev'), 800);
+
+                next.classList.add('active');
+                currentSection++;
+                updateProgress();
+            }
+        }
+
+        // ========== BEAT TEDDY (UNLIMITED) ==========
+        function beatTeddy(event) {
+            event.stopPropagation();
+            hitCount++;
+
+            const teddy = document.getElementById('cuteTeddy');
+            const counter = document.getElementById('hitCounter');
+            const bubble = document.getElementById('speechBubble');
+
+            // Update counter
+            counter.textContent = `Hits: ${hitCount}`;
+
+            // Add beating class for animation
+            teddy.classList.add('beating');
+            setTimeout(() => teddy.classList.remove('beating'), 500);
+
+            // Show speech bubble with rotating messages
+            const msgIndex = (hitCount - 1) % ouchMessages.length;
+            bubble.textContent = ouchMessages[msgIndex];
+            bubble.classList.add('show');
+            setTimeout(() => bubble.classList.remove('show'), 1200);
+
+            // Show random impact effect
+            const impacts = ['impact1', 'impact2', 'impact3', 'impact4', 'impact5'];
+            const randomImpact = impacts[Math.floor(Math.random() * impacts.length)];
+            const impact = document.getElementById(randomImpact);
+            impact.classList.remove('show');
+            void impact.offsetWidth;
+            impact.classList.add('show');
+            setTimeout(() => impact.classList.remove('show'), 500);
+
+            // Create particles
+            for (let i = 0; i < 4; i++) {
+                setTimeout(() => {
+                    createParticle(['💥', '✨', '💫', '🌟'][Math.floor(Math.random() * 4)], teddy);
+                }, i * 60);
+            }
+
+            // Vibrate phone if supported
+            if (navigator.vibrate) {
+                navigator.vibrate(50);
+            }
+        }
+
+        // ========== OPEN GIFT ==========
+        function openGift() {
+            if (giftOpened) return;
+            giftOpened = true;
+
+            const gift = document.getElementById('giftBox');
+            const text = document.getElementById('giftText');
+
+            gift.classList.add('opened');
+            text.textContent = 'Surprise! 💖✨';
+            text.style.color = '#ffd1dc';
+            text.style.fontSize = '1.3rem';
+
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    createParticle(['💖', '💕', '✨', '🎀'][Math.floor(Math.random() * 4)], gift);
+                }, i * 50);
+            }
+
+            setTimeout(() => {
+                createLoveExplosion();
+            }, 800);
+
+            setTimeout(() => {
+                nextSection();
+            }, 3000);
+        }
+
+        // ========== LOVE EXPLOSION ==========
+        function createLoveExplosion() {
+            const explosion = document.getElementById('loveExplosion');
+            explosion.classList.add('active');
+
+            const loveTexts = [
+                "I Love You ❤️", "Love You 💕", "I Love You! 💖", 
+                "Love ❤️", "You 💕", "I ❤️ You", "Love You Jaan 💋",
+                "Forever Yours 💕", "My Everything ❤️", "I Love You Loki 💖",
+                "Sorry ❤️", "Maaf Koro 💕", "Tumi Amar 💖", "Always Yours ❤️"
+            ];
+
+            for (let i = 0; i < 60; i++) {
+                setTimeout(() => {
+                    const text = document.createElement('div');
+                    text.className = 'love-text';
+                    text.textContent = loveTexts[Math.floor(Math.random() * loveTexts.length)];
+
+                    const startX = 5 + Math.random() * 90;
+                    const startY = 5 + Math.random() * 90;
+                    text.style.left = startX + '%';
+                    text.style.top = startY + '%';
+
+                    const tx = (Math.random() - 0.5) * 400 + 'px';
+                    const ty = (Math.random() - 0.5) * 400 + 'px';
+                    const rot = (Math.random() - 0.5) * 360 + 'deg';
+
+                    text.style.setProperty('--tx', tx);
+                    text.style.setProperty('--ty', ty);
+                    text.style.setProperty('--rot', rot);
+                    text.style.fontSize = (0.8 + Math.random() * 1.5) + 'rem';
+                    text.style.color = ['#ff6b9d', '#ffd1dc', '#ffb6c1', '#ff9f43', '#feca57', '#ff4757'][Math.floor(Math.random() * 6)];
+
+                    explosion.appendChild(text);
+                    setTimeout(() => text.remove(), 3000);
+                }, i * 60);
+            }
+
+            for (let i = 0; i < 40; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.textContent = ['❤️', '💖', '💕', '💗', '💓', '💝'][Math.floor(Math.random() * 6)];
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.top = '-50px';
+                    heart.style.animationDuration = (2 + Math.random() * 3) + 's';
+                    heart.style.fontSize = (1 + Math.random() * 2) + 'rem';
+                    document.body.appendChild(heart);
+                    setTimeout(() => heart.remove(), 5000);
+                }, i * 80);
+            }
+        }
+
+        function createParticle(emoji, parent) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.textContent = emoji;
+            particle.style.left = '50%';
+            particle.style.top = '50%';
+            particle.style.fontSize = '1.5rem';
+            particle.style.setProperty('--tx', (Math.random() - 0.5) * 200 + 'px');
+            particle.style.setProperty('--ty', (Math.random() - 0.5) * 200 + 'px');
+            parent.appendChild(particle);
+            setTimeout(() => particle.remove(), 3000);
+        }
+
+        function toggleMusic() {
+            const music = document.getElementById('bgMusic');
+            const btn = document.getElementById('musicBtn');
+
+            if (musicPlaying) {
+                music.pause();
+                btn.textContent = '🔇';
+                btn.classList.remove('playing');
+            } else {
+                music.play().catch(e => console.log('Autoplay blocked'));
+                btn.textContent = '🎵';
+                btn.classList.add('playing');
+            }
+            musicPlaying = !musicPlaying;
+        }
+
+        let touchStartY = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.changedTouches[0].screenY;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            const diff = touchStartY - e.changedTouches[0].screenY;
+            if (Math.abs(diff) > 50 && diff > 0 && currentSection !== 2 && currentSection !== 3) {
+                nextSection();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if ((e.key === 'ArrowDown' || e.key === ' ') && currentSection !== 2 && currentSection !== 3) {
+                nextSection();
+            }
+        });
+    </script>
+</body>
+</html>
